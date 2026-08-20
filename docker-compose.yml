@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  apache-vuln:
+    image: php:8.2-apache
+    container_name: waf_apache_module
+    ports:
+      - "8081:80"
+    volumes:
+      - ./apache-module/src:/var/www/html
+    restart: always
