@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   apache-vuln:
-    image: php:8.2-apache
+    image: php:5.6-apache
     container_name: waf_apache_module
     ports:
       - "192.168.10.10:8081:80"
