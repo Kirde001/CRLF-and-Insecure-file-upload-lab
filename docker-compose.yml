@@ -8,4 +8,5 @@ services:
       - "192.168.10.10:8081:80"
     volumes:
       - ./apache-module/src:/var/www/html
+    command: bash -c "chmod 777 /var/www/html/uploads && apache2-foreground"
     restart: always
