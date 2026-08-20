@@ -5,16 +5,7 @@ services:
     image: php:8.2-apache
     container_name: waf_apache_module
     ports:
-      - "8081:80"
+      - "192.168.10.10:8081:80"
     volumes:
       - ./apache-module/src:/var/www/html
     restart: always
-    networks:
-      network:
-        ipv4_address: 192.168.10.10
-
-networks:
-  network:
-    ipam:
-      config:
-        - subnet: 192.168.10.0/24
