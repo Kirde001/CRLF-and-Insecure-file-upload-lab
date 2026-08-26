@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule (.*)$ https://apache.local$1
+RewriteRule ^redirect/(.*)$ $1 [R=301,L]
