@@ -2,9 +2,9 @@ services:
   apache-wsrs:
     image: php:5.6-apache
     container_name: apache_module
-    #ports:
-    #  - "5556:80"
-    network_mode: "host"
+    ports:
+      - "5556:80"
+    #network_mode: "host"
     volumes:
       - ./apache-module/src:/var/www/html
     command: bash -c "chmod 777 /var/www/html/uploads && a2enmod rewrite && apache2-foreground"
