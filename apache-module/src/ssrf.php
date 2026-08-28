@@ -14,7 +14,7 @@ if (isset($_GET['url'])) {
     $output = curl_exec($ch);
     
     if (curl_errno($ch)) {
-        echo 'Ошибка cURL: ' . curl_error($ch);
+        echo 'ERR cURL: ' . curl_error($ch);
     } else {
         echo "<pre>" . htmlspecialchars($output) . "</pre>";
     }
