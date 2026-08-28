@@ -7,5 +7,6 @@ services:
     #network_mode: "host"
     volumes:
       - ./apache-module/src:/var/www/html
+      - ./custom.conf:/etc/apache2/conf-enabled/custom.conf
     command: bash -c "chmod 777 /var/www/html/uploads && a2enmod rewrite && apache2-foreground"
     restart: always
